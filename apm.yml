@@ -1,0 +1,69 @@
+name: apm-skills
+version: 0.1.2
+description: Personal and curated agent skills, published as a plugin 
+  marketplace for Claude Code, GitHub Copilot CLI and APM
+author: yannibenoit
+marketplace:
+  owner:
+    name: yannibenoit
+  outputs:
+    claude: {}
+    copilot: {}
+  packages:
+    # Third-party plugins, pinned to reviewed commits
+    - name: andrej-karpathy-skills
+      description: Karpathy-inspired guidelines to reduce common LLM coding 
+        mistakes
+      source: multica-ai/andrej-karpathy-skills
+      ref: 2c606141936f1eeef17fa3043a72095b4765b9c2
+    - name: visual-pr
+      description: Create or update a PR with a concise visual outline for 
+        reviewers
+      source: humanlayer/skills
+      subdir: plugins/visual-pr
+      ref: 653b6411c1f70c275a18e37673b042ff99f67ceb
+    - name: show-me
+      description: Explain the current topic with diagrams and code-shape 
+        sketches
+      source: humanlayer/skills
+      subdir: plugins/show-me
+      ref: 653b6411c1f70c275a18e37673b042ff99f67ceb
+    - name: grilling
+      description: Stress-test a plan or decision with structured rounds of 
+        questions
+      source: mattpocock/skills
+      subdir: skills/productivity/grilling
+      ref: a496f5513d4a4cf889bc48e189e579f4b0bdf6aa
+    - name: caveman-julius
+      description: Terse caveman voice that preserves technical details
+      source: JuliusBrussee/caveman
+      subdir: skills/caveman
+      ref: 9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4
+    - name: ponytail
+      description: Lazy senior developer mode and five focused companion skills
+      source: DietrichGebert/ponytail
+      subdir: skills
+      ref: 96608e078b2d5ea607c5c3b8b5a54d1c1fba6846
+
+    - name: prd
+      description: "Prd skill from snarktank/ralph."
+      source: snarktank/ralph
+      subdir: skills/prd
+      ref: 6c53cb0b831ebe8739c6a003e22af14902d8b0b5
+
+    - name: dbt
+      description: "dbt Labs skills for analytics engineering: models, tests, semantic
+        layer, job troubleshooting"
+      source: dbt-labs/dbt-agent-skills
+      subdir: skills/dbt
+      ref: b8facde20b7a92c40ce3e6b86b71c4b92aa44040
+dependencies:
+  apm:
+    - multica-ai/andrej-karpathy-skills
+    - humanlayer/skills/plugins/visual-pr
+    - humanlayer/skills/plugins/show-me
+    - mattpocock/skills/skills/productivity/grilling
+    - JuliusBrussee/caveman/skills/caveman
+    - DietrichGebert/ponytail/skills
+    - snarktank/ralph/skills/prd
+    - dbt-labs/dbt-agent-skills/skills/dbt

@@ -1,0 +1,7 @@
+
+# APM dependencies
+apm_modules/
+
+# Nested git repos, kept out of this repo
+apm-skills/
+custom-marketplace/
